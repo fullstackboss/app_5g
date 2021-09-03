@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 
 
 class MyEquipoInterna extends StatelessWidget {
-  //final String callgordo;
+  final String neonombre;
+  final String neofoto;
   const MyEquipoInterna({
-    Key? key,
+    Key? key, required this.neonombre, required this.neofoto,
   }) : super(key: key);
 
   @override
@@ -31,8 +32,8 @@ class MyEquipoInterna extends StatelessWidget {
             child: SizedBox(
                 height: 220,
                 child: Hero(
-                    tag: "zangief",
-                    child: Image.asset("assets/images/team_zangief.png"))),
+                    tag: this.neonombre,
+                    child: Image.asset("assets/images/${this.neofoto}"))),
           ),
         ),
         SliverList(delegate: SliverChildListDelegate(_milista()))

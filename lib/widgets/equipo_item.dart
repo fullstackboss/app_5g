@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class MyEquipoItem extends StatelessWidget {
-  final String nomgordo;
+  final String nombregordo;
   final String cargo;
   final String descripcion;
   final String foto;
 
   const MyEquipoItem({
     Key? key,
-    required this.nomgordo,
+    required this.nombregordo,
     required this.cargo,
     required this.descripcion,
     required this.foto,
@@ -68,7 +68,7 @@ class MyEquipoItem extends StatelessWidget {
               curve: Curves.ease,
               tween: Tween(begin: 1.0, end: 0.0),
               child: Hero(
-                tag: this.nomgordo,
+                tag: this.nombregordo,
                 child: Image.asset("assets/images/${this.foto}")),
               duration: const Duration(milliseconds: 500),
               builder: (context, value, child) {

@@ -4,13 +4,6 @@ import 'package:prototipo_one/pages/menu_setting.dart';
 import 'package:prototipo_one/widgets/equipo_item.dart';
 
 class MyEquipo extends StatelessWidget {
-  // Generate a dummy list
-  // Map milista = {
-  //   'nombre':'Jonie',
-  //   'cargo':'Disenador',
-  //   'foto':'foto'
-  //   };
-
   final myProducts = List<String>.generate(10, (i) => 'Product $i');
 
   @override
@@ -28,45 +21,61 @@ class MyEquipo extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => MyEquipoInterna()),
-                      );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MyEquipoInterna(neonombre: "zangief", neofoto: "team_zangief.png",)),
+                    );
                   },
-                  child: 
-                  MyEquipoItem(
-                    nomgordo: "zangief",
+                  child: MyEquipoItem(
+                    nombregordo: "zangief",
                     cargo: "DISENADOR",
                     descripcion: "Diseños con sopita",
                     foto: "team_zangief.png",
                   ),
                 ),
-                MyEquipoItem(
-                  nomgordo: "koko",
-                  cargo: "DESARROLLO NINJA",
-                  descripcion: "Diseños con sopita",
-                  foto: "team_koko.png",
+                GestureDetector(
+                  onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MyEquipoInterna(neonombre: "koko", neofoto: "team_koko.png",)),
+                      );
+                  },
+                  child: MyEquipoItem(
+                    nombregordo: "koko",
+                    cargo: "DESARROLLO NINJA",
+                    descripcion: "Diseños con sopita",
+                    foto: "team_koko.png",
+                  ),
+                ),
+                GestureDetector(
+                 onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MyEquipoInterna(neonombre: "shulo", neofoto: "team_shulo.png",)),
+                      );
+                  },
+                  child: MyEquipoItem(
+                    nombregordo: "shulo",
+                    cargo: "DESARROLLO",
+                    descripcion: "Diseños con sopita",
+                    foto: "team_shulo.png",
+                  ),
                 ),
                 MyEquipoItem(
-                  nomgordo: "shulo1",
-                  cargo: "DESARROLLO",
-                  descripcion: "Diseños con sopita",
-                  foto: "team_shulo.png",
-                ),
-                MyEquipoItem(
-                  nomgordo: "yo",
+                  nombregordo: "yo",
                   cargo: "VIDEO",
                   descripcion: "Diseños con sopita",
                   foto: "team_yo.png",
                 ),
                 MyEquipoItem(
-                  nomgordo: "mono",
+                  nombregordo: "mono",
                   cargo: "FOTOGRAFÍA",
                   descripcion: "Diseños con sopita",
                   foto: "team_mono.png",
                 ),
                 MyEquipoItem(
-                  nomgordo: "haishi",
+                  nombregordo: "haishi",
                   cargo: "VIDEOJUEGOS",
                   descripcion: "Diseños con sopita",
                   foto: "team_haishi.png",
