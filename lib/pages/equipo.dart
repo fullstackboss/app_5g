@@ -62,23 +62,47 @@ class MyEquipo extends StatelessWidget {
                     foto: "team_shulo.png",
                   ),
                 ),
-                MyEquipoItem(
-                  nombregordo: "yo",
-                  cargo: "VIDEO",
-                  descripcion: "Diseños con sopita",
-                  foto: "team_yo.png",
+                GestureDetector(
+                  onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MyEquipoInterna(neonombre: "yo", neofoto: "team_yo.png",)),
+                      );
+                  },
+                  child: MyEquipoItem(
+                    nombregordo: "yo",
+                    cargo: "VIDEO",
+                    descripcion: "Diseños con sopita",
+                    foto: "team_yo.png",
+                  ),
                 ),
-                MyEquipoItem(
-                  nombregordo: "mono",
-                  cargo: "FOTOGRAFÍA",
-                  descripcion: "Diseños con sopita",
-                  foto: "team_mono.png",
+                GestureDetector(
+                  onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MyEquipoInterna(neonombre: "mono", neofoto: "team_mono.png",)),
+                      );
+                  },
+                  child: MyEquipoItem(
+                    nombregordo: "mono",
+                    cargo: "FOTOGRAFÍA",
+                    descripcion: "Diseños con sopita",
+                    foto: "team_mono.png",
+                  ),
                 ),
-                MyEquipoItem(
-                  nombregordo: "haishi",
-                  cargo: "VIDEOJUEGOS",
-                  descripcion: "Diseños con sopita",
-                  foto: "team_haishi.png",
+                GestureDetector(
+                  onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MyEquipoInterna(neonombre: "haishi", neofoto: "team_haishi.png",)),
+                      );
+                  },
+                  child: MyEquipoItem(
+                    nombregordo: "haishi",
+                    cargo: "VIDEOJUEGOS",
+                    descripcion: "Diseños con sopita",
+                    foto: "team_haishi.png",
+                  ),
                 ),
               ],
             ),
