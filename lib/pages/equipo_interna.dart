@@ -21,24 +21,45 @@ class MyEquipoInterna extends StatelessWidget {
             child: CustomScrollView(
       slivers: <Widget>[
         SliverAppBar(
-          //title: Text("SLIVER"),
           pinned: true,
-          expandedHeight: 250,
-          collapsedHeight: 70,
-
+          expandedHeight: 230,
+          collapsedHeight: 120,
+          automaticallyImplyLeading: false,
           flexibleSpace: Container(
             alignment: Alignment.bottomCenter,
             decoration: BoxDecoration(
-              gradient: RadialGradient(colors: [
-                Color(0Xff7E7EB6),
-                Color(0Xff4B4D81),
-              ], radius: 0.65),
+              gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Color(0xffBB2A67),
+                Color(0xff4B4D81),
+              ],stops: [0.5,0.5]),
             ),
-            child: SizedBox(
-                height: 220,
-                child: Hero(
-                    tag: this.neonombre,
-                    child: Image.asset("assets/images/${this.neofoto}"))),
+            child: Container(
+              height: 200,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: ListTile(
+                        title: Text(
+                          "LOREM IPSUM",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700, color: Colors.white),
+                        ),
+                        subtitle: Text(
+                          "Desconocido ment",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                        child: Hero(
+                          tag: this.neonombre,
+                          child: Image.asset("assets/images/${this.neofoto}"))),
+                  ],
+              ),
+            ),
           ),
         ),
         SliverList(delegate: SliverChildListDelegate(_milista()))
@@ -77,17 +98,16 @@ List<Widget> _milista() {
                 ],
               )),
           Divider(
-            color: Colors.black,
             thickness: 0.5,
           ),
           Container(
-            padding: EdgeInsets.symmetric(vertical: 10),
+            padding: EdgeInsets.symmetric(vertical: 20),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Center(
                   child: Text(
-                    "Nombre del Gordo".toUpperCase(),
+                    "Datos del Gordo".toUpperCase(),
                     style: TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold,
@@ -99,7 +119,6 @@ List<Widget> _milista() {
             ),
           ),
           Container(
-            
             padding: EdgeInsets.only(top: 0, bottom: 10, right: 30, left: 30),
             child: Center(
                 child: Column(
@@ -109,13 +128,45 @@ List<Widget> _milista() {
                     "Profesión:",
                     style: TextStyle(fontWeight: FontWeight.w700),
                   ),
-                  subtitle: Text("Desconocido por el momento lorem ipsum dato"),
+                  subtitle: Text("Desconocido mento lorem ipsum dato"),
                   contentPadding: EdgeInsets.all(0.0),
+                  leading: Icon(Ionicons.book_outline),
                 ),
-                Text(
-                  "Mollit dol elit quis excei. Id Lorem exem elit veniam mollit aliqua sit nulla. Voluptate est deserunt aliqua pariatur deserunt ad id do in nulla.",
-                  style: TextStyle(fontSize: 15.0),
-                  textAlign: TextAlign.left,
+                ListTile(
+                  title: Text(
+                    "Comida Favorita:",
+                    style: TextStyle(fontWeight: FontWeight.w700),
+                  ),
+                  subtitle: Text("Desconocido mento lorem ipsum dato"),
+                  contentPadding: EdgeInsets.all(0.0),
+                  leading: Icon(Ionicons.restaurant_outline),
+                ),
+                ListTile(
+                  title: Text(
+                    "Hobbies:",
+                    style: TextStyle(fontWeight: FontWeight.w700),
+                  ),
+                  subtitle: Text("Desconocido mento lorem ipsum dato"),
+                  contentPadding: EdgeInsets.all(0.0),
+                  leading: Icon(Ionicons.tv_outline),
+                ),
+                ListTile(
+                  title: Text(
+                    "Juegos favoritos:",
+                    style: TextStyle(fontWeight: FontWeight.w700),
+                  ),
+                  subtitle: Text("Desconocido mento lorem ipsum dato"),
+                  contentPadding: EdgeInsets.all(0.0),
+                  leading: Icon(Ionicons.game_controller_outline),
+                ),
+                ListTile(
+                  title: Text(
+                    "Deporte:",
+                    style: TextStyle(fontWeight: FontWeight.w700),
+                  ),
+                  subtitle: Text("Desconocido mento lorem ipsum dato"),
+                  contentPadding: EdgeInsets.all(0.0),
+                  leading: Icon(Ionicons.speedometer_outline),
                 ),
               ],
             )),
@@ -124,49 +175,15 @@ List<Widget> _milista() {
             padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 14),
             width: double.infinity,
             child: CupertinoButton(
-              child: Text("CONTACTAR"),
+              child: Text("VER TRABAJOS"),
               onPressed: () {},
               color: Color(0xff4B4D81),
               borderRadius: BorderRadius.circular(50),
             ),
           ),
-          Divider(
-            color: Colors.black,
-            thickness: 0.5,
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 20),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Center(
-                  child: Text(
-                    "Trabajos realizados".toUpperCase(),
-                    style:
-                        TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            height: 300,
-            margin: EdgeInsets.only(top: 0),
-            child: PageView(
-              controller: PageController(viewportFraction: 0.8),
-              physics: BouncingScrollPhysics(),
-              children: <Widget>[
-                Cuadros(miurl: "http://www.yonimus.com/portafolio/fotos/39qm753i2h_sarah_im.jpg",),
-                Cuadros(miurl: "http://www.yonimus.com/portafolio/fotos/d91_dog_im.jpg",),
-                Cuadros(miurl: "http://www.yonimus.com/portafolio/fotos/vuf_lider1_im.jpg",),
-                 Cuadros(miurl: "http://www.yonimus.com/portafolio/fotos/d4_runner_im.jpg",),
-                 Cuadros(miurl: "http://www.yonimus.com/portafolio/fotos/39qm753i2h_sarah_im.jpg",),
-                Cuadros(miurl: "http://www.yonimus.com/portafolio/fotos/d91_dog_im.jpg",),
-                Cuadros(miurl: "http://www.yonimus.com/portafolio/fotos/vuf_lider1_im.jpg",),
-                 Cuadros(miurl: "http://www.yonimus.com/portafolio/fotos/d4_runner_im.jpg",),
-              ],
-            ),
-          ),
+          SizedBox(
+            height: 130,
+          )
         ],
       ),
     ),
@@ -194,8 +211,7 @@ List<Widget> _milista() {
 
 class Cuadros extends StatelessWidget {
   final String miurl;
-  const Cuadros({Key? key, required this.miurl})
-      : super(key: key);
+  const Cuadros({Key? key, required this.miurl}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -204,10 +220,11 @@ class Cuadros extends StatelessWidget {
         width: double.infinity,
         height: 400,
         child: Container(
-          child: CachedNetworkImage(imageUrl: miurl, fit: BoxFit.fill,)),
-        
+            child: CachedNetworkImage(
+          imageUrl: miurl,
+          fit: BoxFit.fill,
+        )),
       ),
     );
-    
   }
 }

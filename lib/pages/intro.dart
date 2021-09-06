@@ -14,10 +14,13 @@ class MyIntro extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-              Color(0xffBB2A67),
-              Color(0xff4B4D81),
+              Color(0xFF4B4D81),
+              Color(0xff993B7F),
               //Color(0xff4B4D81),
-            ])),
+            ], 
+            
+            )
+            ),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
